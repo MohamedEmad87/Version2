@@ -1,0 +1,26 @@
+- var pageTitle = "Profile";
+
+doctype html
+html(lang="en")
+  head
+    include includes/meta.pug
+    link(rel="stylesheet", href="../css/profile.css")
+    title #{pageTitle}
+  body
+    #emad-app
+      .page-content
+        header
+          h1.name {{author}}
+          .logout Logout
+            i.fas.fa-sign-out-alt
+        .containers
+          .about
+            h2 About Me
+            p Welocme to my profile bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.
+          .right
+            .new-post
+              button.add-post(v-on:click="addForm") NEW POST
+            .post
+              new-post(v-for="(n, index) in range" :key="index" :title="title" :content="content" :author="author")
+
+    include includes/scripts.pug
